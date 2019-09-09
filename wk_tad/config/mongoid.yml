@@ -6,6 +6,7 @@ development:
         - <%= ENV['MONGO_HOST'] ||= "localhost:27017" %>
       options:
         user: <% ENV['MONGO_USER']%>
+        password: <% ENV['MONGO_PASSWORD]%>
   options:
 test:
   clients:
@@ -14,7 +15,6 @@ test:
       hosts:
         - <%= ENV['MONGO_HOST'] ||= "localhost:27017" %>
       options:
-        user: <% ENV['MONGO_USER']%>
         read:
           mode: :primary
         max_pool_size: 1
